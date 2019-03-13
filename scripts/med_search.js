@@ -6,7 +6,6 @@ function search()
 		snapshot.forEach(function(childSnapshot)
 		{
 			var  key = childSnapshot.key;
-			//var childData = childSnapshot.val();
 			var name=childSnapshot.child("name").val();
 			var name1=childSnapshot.child("name").val();
 			name = name.split(" ");
@@ -21,10 +20,42 @@ function search()
 					{
 						var  key = childSnapshot.key;
 						var childData = childSnapshot.val();
-						console.log(childData);
+						if(key!="constituents" && key!="schedule" && key!="price")document.write(key+": "+childData+"<br>");
+						if(key=="standardUnits")document.write("<br>");
+						if(key=="price")document.write(key+": "+"Rs."+childData+"<br>");
+						if(key=="schedule")
+						{
+							query1 = firebase.database().ref("medicines/"+id+"/schedule").orderByKey();
+							query1.once("value").then(function(snapshot)
+							{
+								snapshot.forEach(function(childSnapshot)
+								{
+									var  key1 = childSnapshot.key;
+									var childData = childSnapshot.val();
+									document.write(key1+": "+childData+"<br>");
+								});
+							});							
+						}
 					});
 				});
 			}
 		});
 	});
 }	
+
+
+
+
+/*var query1 = firebase.database().ref("medicines/"+id).orderByKey();
+				query1.once("value").then(function(snapshot)
+				{
+					snapshot.forEach(function(childSnapshot)
+					{
+						var  key = childSnapshot.key;
+						var childData = childSnapshot.val();
+						//console.log(childData); 
+						
+						//console.log(name_val); 
+						//$("#name").append(name_val);
+					});
+				});*/
