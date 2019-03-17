@@ -1,37 +1,35 @@
 <html>
 	<head>
 		<script src="scripts/login.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  //config here
-  firebase.initializeApp(config);
-</script>
-<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-database.js"></script>
-<link rel="stylesheet" href="css/style.css">
-			
-	
+		<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+		<script>
+			var config = {
+			    apiKey: "AIzaSyA2ZEIZUZKfJ-sXkEgGGP_8Xwg0uNd7oIE",
+			    authDomain: "medicine-f36a4.firebaseapp.com",
+			    databaseURL: "https://medicine-f36a4.firebaseio.com",
+			    projectId: "medicine-f36a4",
+			    storageBucket: "medicine-f36a4.appspot.com",
+			    messagingSenderId: "97542411837"
+			  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-database.js"></script>
+		<link rel="stylesheet" href="css/style1.css">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
 	</head>
 	<body>
-		
-		
-		<section>
-			
-			Email<input type="email" name="email" value="Enter email" id="email">
-			<br>
-			Password<input type="password" name="pass" value="Enter password" id="pass">
-			<br>
-			<button onclick="login()" name="login">Login</button>
-			
-		</section>
-	
-			
-	
-		
-		
-	
+		<div class="wrapper fadeInDown">
+		  <div id="formContent">
+		    <div class="fadeIn first">
+		      <img src="/home/pc001/Desktop/PMS-master (1)/PMS-master/login-user-icon.png" id="icon" alt="User Icon" />
+		    </div>
+		      <input type="text" id="email" class="fadeIn second" name="login" placeholder="login">
+		      <input type="text" id="pass" class="fadeIn third" name="login" placeholder="password">
+		      <input type="submit" class="fadeIn fourth" value="Log In" onclick="login()">
+		  </div>
+		</div>	
 	</body>
-
-
 </html>
